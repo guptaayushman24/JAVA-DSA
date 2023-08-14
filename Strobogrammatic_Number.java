@@ -8,7 +8,7 @@ public class Strobogrammatic_Number{
         m.put('8','8');
         m.put('9','6');
 
-        int start=0;;
+        int start=0;
         int end=n.length()-1;
         while (start<end){
             if (n.charAt(start)!=m.getOrDefault((n.charAt(end)),' ')){

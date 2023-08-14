@@ -14,6 +14,7 @@ public class Binary_Search {
             }
             else{ // arr[mid]>key
                 high = mid-1;
+
             }
         }
 
