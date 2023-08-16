@@ -53,6 +53,59 @@ public class RecursionLect_2 {
         }
         return m%10+sum_digit(m/10);
     }
+
+     // Function for the product of the indivisual digit in the number n
+     public static int prod_digit(int m){
+        // Base Condition
+        if (m%10==m){
+            return m;
+        }
+        return m%10*prod_digit(m/10);
+     }
+
+     //  Function for reverse the given number
+     static int reverse_number;
+     public static void reverse_num(int m){
+        // Base Condition
+        if (m%10==m){
+            System.out.println(m);
+            return;
+        }
+        System.out.print(m%10);
+        reverse_num(m/10);
+
+     }
+
+    // Function for checking the number is palindrome or not
+
+    // Function for counting the number in the digit
+    static int count=0;
+    public static int count_zero(int m){
+        if (m==0){
+            return count;
+        }
+        int rem = m%10;
+        if (rem==0){
+            count++;
+        }
+        return count_zero(m/10);
+    }
+    // Function for counting the number of steps to redunce the number
+    static int steps=0;
+    public static int steps_count(int m){
+        if (m==0){
+            return  steps;
+        }
+        if (m%2==0){
+            steps++;
+            return steps_count(m/2);
+        }
+        else{
+            steps++;
+            return steps_count(m-1);
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
         // Printing n->1
@@ -73,7 +126,18 @@ public class RecursionLect_2 {
         int m = sc.nextInt();
         System.out.println(sum_digit(m));
 
+        // Product of the indivisual digit in the number n
+        System.out.println(prod_digit(m));
 
+        // Reverse the given number
+        reverse_num(m);
 
+        // Check the number is palindrome or not
+
+        // Count the numbers of zero or not
+        System.out.println(count_zero(m));
+
+        // Count the number of steps to reduce the number
+         System.out.println(steps_count(m));
     }
 }
