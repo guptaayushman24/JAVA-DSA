@@ -15,10 +15,20 @@ class Priority_Queue{
 
         // Now we are printing the priority queue by extracting the head so priority queue will by default will give you the mean heap
 
-      while (pq.isEmpty()==false){
-        System.out.print(pq.poll()+" ");
-      }
+        int arr [] = new int[pq.size()];
+        int i=0;
+        while (pq.isEmpty()==false){
+          arr[i] = pq.poll();
+          i++;
+        }
+        for (int j=0;j<arr.length;j++){
+            System.out.print(arr[j]+" ");
+        }
+      //   System.out.println(pq.size());
+      //   System.out.println(pq.poll());
+      // while (pq.isEmpty()==false){
+      //   System.out.print(pq.poll()+" ");
+      // }
       // These will give the answer in the ascending order
-
     }
 }
